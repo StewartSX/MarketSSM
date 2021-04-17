@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--配置连接数据库的属性信息 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/market"
+                        userId="root"
+                        password="root">
+        </jdbcConnection>
+        <!-- 配置Java的类型转换 -->
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!-- 配置JavaBean生成的位置 -->
+        <javaModelGenerator targetPackage="com.oracle.curd.bean" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!-- 指定SQL语句的映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="mapper"  targetProject=".\src\main\resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+        <!-- 指定DAO接口生成的位置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.oracle.curd.dao"  targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        <!-- 指定读取哪些表 -->
+        <table schema="DB2ADMIN" tableName="ckin" domainObjectName="Ckin" >
+        </table>
+        <table schema="DB2ADMIN" tableName="ckretire" domainObjectName="Ckretire" >
+        </table>
+        <table schema="DB2ADMIN" tableName="cusretire" domainObjectName="Cusretire" >
+        </table>
+        <table schema="DB2ADMIN" tableName="custom" domainObjectName="Custom" >
+        </table>
+        <table schema="DB2ADMIN" tableName="kcxx" domainObjectName="Kcxx" >
+        </table>
+        <table schema="DB2ADMIN" tableName="manager" domainObjectName="Manager" >
+        </table>
+        <table schema="DB2ADMIN" tableName="product" domainObjectName="Product" >
+        </table>
+        <table schema="DB2ADMIN" tableName="sale" domainObjectName="Sale" >
+        </table>
+        <table schema="DB2ADMIN" tableName="staff" domainObjectName="Staff" >
+        </table>
+        <table schema="DB2ADMIN" tableName="supply" domainObjectName="Supply" >
+        </table>
+        <table schema="DB2ADMIN" tableName="type" domainObjectName="Type" >
+        </table>
+
+    </context>
+</generatorConfiguration>
